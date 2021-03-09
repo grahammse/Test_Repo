@@ -21,3 +21,11 @@ ggplot(dat, aes(mpg, wt, color = as.factor(am), fill = as.factor(am))) +
 write_csv(dat, "mtcars.csv")
 
 
+dat %>% 
+  lm(mpg ~ wt, data = .) %>% 
+  broom::tidy()
+
+dat %>% 
+  lm(mpg ~ wt, data = .) %>% 
+  ggeffects::ggpredict(., terms = "wt") %>% 
+  plot()
