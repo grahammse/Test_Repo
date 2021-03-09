@@ -31,5 +31,10 @@ dat %>%
   plot()
 
 dat %>% 
-  lm(mpg ~ wt + hp, data = .) %>% 
+  lm(mpg ~ wt * hp, data = .) %>% 
   broom::tidy()
+
+dat %>% 
+  lm(mpg ~ wt * hp, data = .) %>% 
+  ggeffects::ggpredict(., terms = c("wt", "hp")) %>% 
+  plot()
