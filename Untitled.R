@@ -11,10 +11,10 @@ ggplot(dat, aes(mpg, wt, color = as.factor(am), fill = as.factor(am))) +
   geom_point() + 
   geom_smooth(method = "lm") + 
   labs(
-    color = "American Manufacturer",
-    fill = "American Manufacturer",
+    color = "American",
+    fill = "American ",
     y = "Weight",
-    x = "Miles Per Gallon"
+    x = "MPG"
   ) + 
   facet_wrap(~gear)
 
