@@ -30,3 +30,6 @@ dat %>%
   ggeffects::ggpredict(., terms = "wt") %>% 
   plot()
 
+dat %>% 
+  lm(mpg ~ wt + hp, data = .) %>% 
+  broom::tidy()
